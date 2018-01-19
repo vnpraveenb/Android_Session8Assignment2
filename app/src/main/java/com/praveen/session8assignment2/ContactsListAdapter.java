@@ -1,11 +1,9 @@
 package com.praveen.session8assignment2;
 
 import android.content.Context;
-import android.support.annotation.NonNull;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
@@ -17,15 +15,14 @@ import java.util.ArrayList;
 
 public class ContactsListAdapter extends BaseAdapter {
 
-    // Private Variables.
     private Context context;
     private ArrayList<Contact> contactsArrayList;
 
     /**
      * ContactsListAdapter Constructor
      *
-     * @param context
-     * @param contactsArrayList
+     * @param context  gets context from the Activity calling the constructor
+     * @param contactsArrayList gets a populated ArrayList object which needs to be used to populate the ListView
      */
     public ContactsListAdapter(Context context, ArrayList<Contact> contactsArrayList){
         this.context = context;
@@ -90,13 +87,13 @@ public class ContactsListAdapter extends BaseAdapter {
         View contactItemView =  LayoutInflater.from(context).inflate(R.layout.contacts_list_item_layout,null);
 
         // Find Name, Phone Number Text View From Inflated Layout
-        TextView contactName = (TextView) contactItemView.findViewById(R.id.contactName);
-        TextView contactNumber = (TextView) contactItemView.findViewById(R.id.contactNumber);
+        TextView contactName =   contactItemView.findViewById(R.id.contactName);
+        TextView contactNumber =  contactItemView.findViewById(R.id.contactNumber);
 
         // Set Text To Name And Phone Number TextView based on Contacts List Object and the Position where the
         // View Called from.
-        contactName.setText(contactsArrayList.get(position).getName());
-        contactNumber.setText(contactsArrayList.get(position).getPhoneNumber());
+        contactName.setText(contactsArrayList.get(position).getName().toString());
+        contactNumber.setText(contactsArrayList.get(position).getPhoneNumber().toString());
 
         // Return Custom List View
         return contactItemView;

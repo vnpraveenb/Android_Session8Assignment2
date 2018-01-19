@@ -21,7 +21,7 @@ public class Contact {
     }
 
     /**
-     * @param name
+     * @param name Sets the name of the contact
      *
      */
     public void setName(String name) {
@@ -36,7 +36,7 @@ public class Contact {
     }
 
     /**
-     * @param phoneNumber
+     * @param phoneNumber Sets the phoneNumber of the contact
      */
     public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
