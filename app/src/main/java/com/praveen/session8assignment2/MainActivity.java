@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
         listContactsButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                
+
                 // Assigns Values into contactList ArrayList
                 for (int i = 0; i < 15; i++) {
                     contactsList.add(new Contact("Name " + (i + 1), "PhoneNumber" + (i + 1)));
